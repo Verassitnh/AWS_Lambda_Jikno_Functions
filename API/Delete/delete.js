@@ -8,10 +8,13 @@ exports.handler = async (e, context) => {
 	let resBody = "";
 	let statCode = 0;
 
+
+	const { id  } = event.pathParameters;
+
 	const params = {
 		TableName: "Users",
 		Key: {
-			id: 'resBody.username',
+			id: id,
 		}
 	}
 
