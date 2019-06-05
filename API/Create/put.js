@@ -2,29 +2,25 @@
 
 const AWS = require('aws-sdk')
 
-exports.handler = async (e, context) => {
+exports.handler = async (event, context) => {
 	const documentClient = new AWS.DynamoDB.DocumentClient();
 
 	let resBody = "";
 	let statCode = 0;
 
+	const {id, username, email, firstName, lastName} = JSON.parse(event.body)
+
+
 	const params = {
 		TableName: "Users",
 		Item: {
-			// username: resBody.username,
-			// Id: resBody.id,
-			// Email: resBody.email,
-			// FirstName: resBody.firstName,
-			// LastName: resBody.lastName,
-			id: 'resBody.username',
-			username: 'resBody.id',
-			Email: 'resBody.email',
-			FirstName: 'resBody.firstName',
-			LastName: 'resBody.lastName',
+			id: id,
+			username: username,
+			email: email,
+			firstName: firstName,
+			lastName: lastName
 		}
 	}
-
-
 	try {
 		const data = await documentClient.put(params).promise();
 		resBody = JSON.stringify(data);
