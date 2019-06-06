@@ -2,8 +2,10 @@
 
 const AWS = require('aws-sdk')
 
-exports.handler = async (e, context) => {
+exports.handler = async (event, context) => {
 	const documentClient = new AWS.DynamoDB.DocumentClient();
+
+	const { id } = event.pathParameters;
 
 	let resBody = "";
 	let statCode = 0;
@@ -11,7 +13,7 @@ exports.handler = async (e, context) => {
 	const params = {
 		TableName: "Users",
 		Key: {
-			id: 'Gninoskcaj',
+			id,
 		}
 	}
 
