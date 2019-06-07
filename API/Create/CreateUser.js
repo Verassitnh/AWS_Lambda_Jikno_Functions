@@ -1,40 +1,62 @@
-'use strict'
+'use strict';
 
-const AWS = require('aws-sdk')
+const AWS = require('aws-sdk');
 
 exports.handler = async (event, context) => {
 	const documentClient = new AWS.DynamoDB.DocumentClient();
-
 	let resBody = "";
 	let statCode = 0;
 
-	const {id, username, email, firstName, lastName} = JSON.parse(event.body)
-
+	const { 
+			username, 
+			email,
+			password,
+			avatar,
+			appsOrder,
+			dashboardOrder,
+			miniAppsOrder,
+			plus,
+			plusToken,
+			firstName,
+			lastName,
+			storage, 
+			notifications
+		
+	} = event;
 
 	const params = {
 		TableName: "Users",
 		Item: {
-			id: id,
-			username: username,
-			email: email,
-			firstName: firstName,
-			lastName: lastName
-		}
-	}
+				id: username.toUpperCase() + '_' + new Date().getTime(),
+				username,
+				email,
+				password,
+				avatar,
+				appsOrder,
+				dashboardOrder,
+				miniAppsOrder,
+				plus,
+				plusToken,
+				firstName,
+				lastName,
+				storage,
+				notifications
+			}
+	};
 	try {
-		const data = await documentClient.put(params).promise();
-		resBody = JSON.stringify(data);
-		statCode = 201;
+		resBody = JSON.stringify(event);
+		statCode = 200;
 
 	} catch (err) {
-		resBody = `Unable to Create User: ${err} `
-		statCode = 403;
+		resBody = `Unable to Create User: ${err} `;
+		statCode = 503;
 	}
 
 	const res = {
-		statCode,
+		statusCode: statCode,
 		headers: {
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"access-control-allow-origin": "*"
 		},
 		body: resBody,
 	};
