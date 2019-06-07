@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const AWS = require('aws-sdk')
+const AWS = require('aws-sdk');
 
 exports.handler = async (event, context) => {
 	const documentClient = new AWS.DynamoDB.DocumentClient();
@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
 		Key: {
 			id,
 		}
-	}
+	};
 
 
 	try {
@@ -24,14 +24,15 @@ exports.handler = async (event, context) => {
 		statCode = 200;
 
 	} catch (err) {
-		resBody = `Unable to GET User: ${err} `
+		resBody = `Unable to GET User: ${err} `;
 		statCode = 500;
 	}
 
 	const res = {
-		statCode,
+		statusCode: statCode,
 		headers: {
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"access-control-allow-origin": "*"
 		},
 		body: resBody,
 	};
