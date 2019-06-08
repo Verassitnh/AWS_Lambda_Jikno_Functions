@@ -8,22 +8,25 @@ exports.handler = async (event, context) => {
 	let resBody = "";
 	let statCode = 0;
 console.log('EVENT = '+ JSON.stringify(event));
-    const {appName, description, numberOfUsers} = event;
+    const { name, branch, icon, description, url, startup } = event;
 
 
 
 	const params = {
 		TableName: "Library",
 		Item: {
-			 appName,
-			 appID: new Date().getTime(),
+			 appName: name,
+			 branch,
+			 icon,
 			 description,
-			 users: numberOfUsers
-		}
+			 url,
+			 startup,
+			 appID: 'JIKNO_' + name.toUpperCase() + '_' + new Date().getTime()
+ 		}
 	};
 	try {
 		const data = await documentClient.put(params).promise();
-		resBody = JSON.stringify(event );
+		resBody = JSON.stringify(event);
 		statCode = 201;
 
 	} catch (err) {
