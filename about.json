@@ -1,0 +1,27 @@
+{
+    "version": "1.0.0",
+    "discordIcon": "https://img.shields.io/discord/553716638898192396.svg?color=green&label=Chat%20on%20Discord&style=popout",
+    "discordInvite": "https://discord.gg/hXJQgvG",
+    "frontend": {
+        "svelte": {
+            "website": "https://svelte.dev",
+            "icon": "https://svelte.dev/svelte-logo-horizontal.svg",
+            "version": "3.0.0"
+        },
+        "stars": "https://img.shields.io/github/stars/vehmloewff/jikno.svg?style=social",
+        "license": "https://img.shields.io/github/license/vehmloewff/jikno.svg",
+        "repoName": "jikno"
+    },
+    "backend": {
+        "node": {
+            "icon": "https://nodejs.org/static/images/logo.svg",
+            "version": "9.6.7"
+        },
+        "express": {
+            "version": "4.17.0"
+        }
+    },
+    "changeLog": [
+        { "version": "1.0.0", "released": 17234891728, "whatsNew": "Everything..." }
+    ]
+}
