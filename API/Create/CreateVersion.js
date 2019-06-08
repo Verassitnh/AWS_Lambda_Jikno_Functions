@@ -25,7 +25,7 @@ console.log('EVENT = '+ JSON.stringify(event));
 	};
 	try {
 		const data = await documentClient.put(params).promise();
-		resBody = JSON.stringify(data);
+		resBody = JSON.stringify(event );
 		statCode = 201;
 
 	} catch (err) {
