@@ -25,15 +25,14 @@ exports.handler = async (event, context) => {
 		statCode = 204;
 
 	} catch (err) {
-		resBody = `Unable to Delete User: ${err} `;
+		resBody = `Unable to Delete App: ${err} `;
 		statCode = 403;
 	}
 
 	const res = {
 		statusCode: statCode,
 		headers: {
-			"Content-Type": "application/json",
-			"access-control-allow-origin": "*"
+			"Content-Type": "application/json"
 		},
 		body: resBody,
 	};
