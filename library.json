@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Tasks",
+        "branch": "tasks",
+        "icon": "https://cloud.jikno.com/logos/tasks.svg",
+        "description": "A to-do list app.",
+        "url": "/tasks",
+        "startup": {
+            "hidden": false,
+            "lists": [ ],
+            "url": "/tasks"
+        }
+    },
+    {
+        "name": "Habits",
+        "branch": "habits",
+        "icon": "https://cloud.jikno.com/logos/habits.svg",
+        "description": "Make the good ones better.  Eliminate the bad ones.",
+        "url": "/habits",
+        "startup": {
+            "hidden": false,
+            "root": { },
+            "url": "/habits"
+        }
+    }
+]
