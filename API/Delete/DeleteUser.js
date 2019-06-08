@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const AWS = require('aws-sdk')
+const AWS = require('aws-sdk');
 
-exports.handler = async (e, context) => {
+exports.handler = async (event, context) => {
 	const documentClient = new AWS.DynamoDB.DocumentClient();
 
 	let resBody = "";
@@ -14,9 +14,9 @@ exports.handler = async (e, context) => {
 	const params = {
 		TableName: "Users",
 		Key: {
-			id: id,
+			id,
 		}
-	}
+	};
 
 
 	try {
@@ -25,14 +25,15 @@ exports.handler = async (e, context) => {
 		statCode = 204;
 
 	} catch (err) {
-		resBody = `Unable to Delete User: ${err} `
+		resBody = `Unable to Delete User: ${err} `;
 		statCode = 403;
 	}
 
 	const res = {
-		statCode,
+		statusCode: statCode,
 		headers: {
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"access-control-allow-origin": "*"
 		},
 		body: resBody,
 	};
