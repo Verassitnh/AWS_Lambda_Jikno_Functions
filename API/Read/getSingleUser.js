@@ -24,15 +24,14 @@ exports.handler = async (event, context) => {
 		statCode = 200;
 
 	} catch (err) {
-		resBody = `Unable to GET User: ${err} `;
+		resBody = `Unable to Get User: ${err} `;
 		statCode = 500;
 	}
 
 	const res = {
 		statusCode: statCode,
 		headers: {
-			"Content-Type": "application/json",
-			"access-control-allow-origin": "*"
+			"Content-Type": "application/json"
 		},
 		body: resBody,
 	};
