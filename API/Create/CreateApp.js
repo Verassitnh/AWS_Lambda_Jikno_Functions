@@ -7,7 +7,8 @@ exports.handler = async (event, context) => {
 
 	let resBody = "";
 	let statCode = 0;
-console.log('EVENT = '+ JSON.stringify(event));
+	
+	
     const { name, branch, icon, description, url, startup } = event;
 
 
