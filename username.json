@@ -1,0 +1,25 @@
+{
+    "username": "fakeuser",
+    "email": "fakeguy@example.com",
+    "password": "12345678",
+    "avatar": null,
+    "appsOrder": [ ],
+    "dashboardOrder": [ ],
+    "miniAppsOrder": [ ],
+    "plus": false,
+    "plusToken": null,
+    "firstName": null,
+    "lastName": null,
+    "storage": 0.0000018066667,
+    "notifications": {
+        "81943j123841j34j3kjl4nn123389": {
+            "id": "81943j123841j34j3kjl4nn123389",
+            "name": "Account Created",
+            "description": "Welcome to Jikno!",
+            "initiator": "public_settings",
+            "read": false,
+            "date": 134581345134,
+            "path": "/public/settings"
+        }
+    }
+}
