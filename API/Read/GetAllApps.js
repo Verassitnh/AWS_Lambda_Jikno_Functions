@@ -18,7 +18,7 @@ exports.handler = async (e, context) => {
 		resBody = JSON.stringify(data.Items);
 		statCode = 200;
 	} catch (err) {
-		resBody = `Unable to Get Users: ${err} `;
+		resBody = `Unable to Get Apps: ${err} `;
 		statCode = 500;
 	}
 
