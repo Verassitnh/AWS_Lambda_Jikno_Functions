@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
 
 	let resBody = "";
 	let statCode = 0;
-console.log('EVENT = '+ JSON.stringify(event));
+	
     const { version, discordIcon, discordInvite, frontend, backend, changeLog } = event;
 
 
