@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
 		statCode = 200;
 
 	} catch (err) {
-		resBody = `Unable to Get User: ${err} `;
+		resBody = `Unable to Get AppData: ${err} `;
 		statCode = 500;
 	}
 
