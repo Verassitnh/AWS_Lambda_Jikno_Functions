@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
 	const params = {
 		TableName: "Library",
 		Key: {
-			appName: appName,
+			appName,
 		}
 	};
 
@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
 		statCode = 200;
 
 	} catch (err) {
-		resBody = `Unable to GET App: ${err} `;
+		resBody = `Unable to Get App: ${err} `;
 		statCode = 500;
 	}
 
