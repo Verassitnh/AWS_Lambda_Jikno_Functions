@@ -29,7 +29,7 @@ exports.handler = async (event, context) => {
 		statCode = 201;
 
 	} catch (err) {
-		resBody = `Unable to Create AppDataD: ${err} `;
+		resBody = `Unable to Create AppData: ${err} `;
 		statCode = 403;
 	}
 
