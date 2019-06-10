@@ -1,0 +1,29 @@
+html {
+    font-family: 'Noto Sans HK', sans-serif;
+    background-color: #333 !important;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#demo {
+    height: 40px;
+    vertical-align: middle;
+    font-size: 25px;
+    color: #620006;
+    -webkit-animation-name: pulseInOut; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: .5s; /* Safari 4.0 - 8.0 */
+    animation-name: pulseInOut;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulseInOut {
+    33.33%  {font-size: 25px; color: #620006;}
+   66.66% {font-size: 35px; color: rgb(3, 29, 88);}
+    99.99%  {font-size: 25px; color: #620006;}
+}
